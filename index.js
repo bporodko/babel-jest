@@ -7,7 +7,12 @@ module.exports = {
     if (filename.indexOf("node_modules") === -1 && babel.util.canCompile(filename)) {
       return babel.transform(src, {
         filename: filename,
-        retainLines: true
+        retainLines: true,
+        "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+      ]
       }).code;
     }
 
